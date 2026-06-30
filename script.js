@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     updateActiveNavigation();
     setupNewsletterForm();
+    setupLanguageSwitcher();
 });
 
 function updateActiveNavigation() {
@@ -22,6 +23,31 @@ function updateActiveNavigation() {
             currentPage.includes(href.replace('./', '').replace('../', ''))
         ) {
             link.classList.add('active');
+        }
+    });
+}
+
+// ===========================
+// LANGUAGE SWITCHER
+// ===========================
+
+function setupLanguageSwitcher() {
+    const toggle = document.querySelector('.lang-toggle');
+    const menu = document.querySelector('.lang-menu');
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        menu.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.lang-switcher')) {
+            toggle.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('open');
         }
     });
 }
