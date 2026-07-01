@@ -3,18 +3,18 @@
    =========================== */
 
 :root {
-    --primary-color: #2c5f2d;
-    --secondary-color: #1a3a1b;
-    --accent-color: #e8a87c;
-    --text-color: #2d2d2d;
-    --light-bg: #f9f7f4;
-    --white: #ffffff;
-    --border-color: #e0e0e0;
-    --success-color: #4caf50;
-    --warning-color: #ff9800;
+    --primary-color: #0B132B; /* Deep navy */
+    --secondary-color: #1C2541; /* Dark slate */
+    --accent-color: #5BC0BE; /* Teal accent */
+    --text-color: #3A506B; /* Steel blue */
+    --light-bg: #F5F7FA; /* Subtle light gray */
+    --white: #FFFFFF;
+    --border-color: #E0E0E0;
+    --success-color: #4CAF50;
+    --warning-color: #FF9800;
 }
 
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -38,11 +38,13 @@ body {
 }
 
 /* ===========================
-   NAVIGATION
+   NAVIGATION (Glassmorphism)
    =========================== */
 
 .navbar {
-    background-color: var(--secondary-color);
+    background: rgba(28, 37, 65, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--white);
     padding: 1rem 0;
     position: sticky;
@@ -178,11 +180,13 @@ body {
 }
 
 /* ===========================
-   HERO SECTION
+   HERO SECTION (Animated Gradient)
    =========================== */
 
 .hero {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), var(--text-color), var(--accent-color));
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
     color: var(--white);
     padding: 5rem 2rem;
     text-align: center;
@@ -202,6 +206,12 @@ body {
     font-size: 8rem;
     opacity: 0.9;
     animation: float 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @keyframes float {
@@ -362,9 +372,25 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.article-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
 .feature-card:hover,
 .service-card:hover,
 .column:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.article-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
@@ -904,11 +930,13 @@ body {
 }
 
 /* ===========================
-   FOOTER
+   FOOTER (Glassmorphism)
    =========================== */
 
 .footer {
-    background-color: var(--secondary-color);
+    background: rgba(28, 37, 65, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--white);
     text-align: center;
     padding: 2rem;
