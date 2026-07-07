@@ -33,14 +33,11 @@
         <div class="hero-content">
             <h1>SUMA QINTI - EDT</h1>
             <p class="tagline">Transformación Digital Ética para el Desarrollo</p>
-            <p class="description">Un marco ético para la transformación digital en bancos de desarrollo e instituciones de microfinanzas, con enfoque en unidades productivas en países en desarrollo.</p>
+            <p class="description">Un modelo ético para la transformación digital para instituciones financieras, con enfoque en unidades productivas en países en desarrollo.</p>
             <div class="hero-buttons">
-                <a href="framework/" class="btn btn-primary">Explorar el Marco</a>
+                <a href="framework/" class="btn btn-primary">Explorar el Modelo</a>
                 <a href="perspectives/" class="btn btn-secondary">Leer Nuestros Análisis</a>
             </div>
-        </div>
-        <div class="hero-visual">
-            <div class="hummingbird-icon">🪶</div>
         </div>
     </header>
 
@@ -48,25 +45,26 @@
         <div class="container">
             <h2>¿Qué es Suma Qinti?</h2>
             <p>
-                El marco SQ-EDT propone una forma rigurosa y ética de transformar la tecnología en las instituciones financieras y de desarrollo. Vincula la deuda técnica con la deuda ética, para que la arquitectura digital también sea una cuestión de derechos humanos y gestión de riesgos institucional.
+                El Marco de Trabajo TDE (Transformación Digital Ética) de SumaQinti es un cambio de paradigma excepcional y altamente sofisticado. Representa una labor madura y de rigor académico que aborda un enorme punto ciego en el financiamiento del desarrollo global: la intersección entre la infraestructura técnica y la equidad social sistémica.
+                Este modelo eleva la Transformación Digital a una cuestión de derechos humanos y de mitigación de riesgos institucionales para las Instituciones Financieras de Desarrollo (IFD).
             </p>
-            <p>Suma Qinti, que significa “colibrí hermoso” en quechua, representa un enfoque ágil y propósito para la transformación digital responsable.</p>
+            <p>Suma Qinti, que significa "colibrí hermoso" en quechua, representa el enfoque ágil y decidido hacia una transformación digital ética. Creemos que la tecnología debe servir a la humanidad respetando nuestros valores.</p>
 
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🧭</div>
-                    <h3>Marco de 6 columnas</h3>
-                    <p>Una matriz técnica para implementar transformación digital ética en toda la organización.</p>
+                    <h3>El Marco de las 6 Columnas</h3>
+                    <p>Una matriz técnica integral para implementar la transformación digital ética en toda su organización.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🛠️</div>
-                    <h3>Herramientas prácticas</h3>
-                    <p>API Linter, asesorías especializadas y métricas para mantener la transformación alineada con sus principios.</p>
+                    <h3>Herramientas Prácticas</h3>
+                    <p>Linter de API, consultas de expertos y métricas prácticas para garantizar que su transformación se mantenga en el camino correcto.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💡</div>
-                    <h3>Perspectivas profundas</h3>
-                    <p>Ideas sobre deuda ética, programación moral y el futuro de una tecnología responsable.</p>
+                    <h3>Perspectivas Profundas</h3>
+                    <p>Liderazgo de opinión sobre la deuda ética, la programación moral y el futuro de la tecnología responsable.</p>
                 </div>
             </div>
         </div>
@@ -82,11 +80,23 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Suma Qinti. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Suma Qinti. Todos los derechos reservados.</p>
             <p>Modelo de Transformación Digital Ética</p>
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hero = document.querySelector(".hero");
+            const backgrounds = [
+                "images/background/bg1.png",
+                "images/background/bg2.png",
+                "images/background/bg3.png",
+                "images/background/bg4.png"
+            ];
+            const randomImage = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+            hero.style.backgroundImage = `url(${randomImage})`;
+        });
+    </script>
 </body>
 </html>
