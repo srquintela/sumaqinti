@@ -41,9 +41,6 @@
                 <a href="perspectives/" class="btn btn-secondary">Read Our Insights</a>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="hummingbird-icon">??</div>
-        </div>
     </header>
 
     <!-- Quick Overview -->
@@ -93,6 +90,18 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hero = document.querySelector(".hero");
+            const backgrounds = [
+                "images/background/bg1.png",
+                "images/background/bg2.png",
+                "images/background/bg3.png",
+                "images/background/bg4.png"
+            ];
+            const randomImage = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+            hero.style.backgroundImage = `url(${randomImage})`;
+        });
+    </script>
 </body>
 </html>

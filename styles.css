@@ -184,9 +184,9 @@ body {
    =========================== */
 
 .hero {
-    background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), var(--text-color), var(--accent-color));
-    background-size: 400% 400%;
-    animation: gradientShift 12s ease infinite;
+    position: relative;
+    background-size: cover;
+    background-position: center;
     color: var(--white);
     padding: 5rem 2rem;
     text-align: center;
@@ -196,9 +196,21 @@ body {
     min-height: 600px;
 }
 
+    /* Add a semi-transparent overlay */
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(11, 19, 43, 0.55); /* dark navy tint */
+        backdrop-filter: blur(2px);
+        z-index: 0;
+    }
+
+/* Ensure hero content stays above overlay */
 .hero-content {
-    flex: 1;
-    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .hero-visual {
@@ -434,13 +446,13 @@ body {
     position: relative;
 }
 
-.service-features li:before {
-    content: "?";
-    position: absolute;
-    left: 0;
-    color: var(--success-color);
-    font-weight: bold;
-}
+    .service-features li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--success-color);
+        font-weight: bold;
+    }
 
 /* ===========================
    PAGE HEADER
