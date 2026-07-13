@@ -10,7 +10,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Suma Qinti</a>
+            <img src="images/SQlogoheader.png" alt="SUMA QINTI">
             <div class="nav-actions">
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -35,7 +35,7 @@
         <div class="hero-content">
             <h1>SUMA QINTI - EDT </h1>
             <p class="tagline">Ethical Digital Transformation for Development</p>
-            <p class="description">Ethical Digital Transformation Framework for for Development Finance Institutions in Developing Countries.</p>
+            <p class="description">Ethical Digital Transformation Framework for Development Finance Institutions in Developing Countries.</p>
             <div class="hero-buttons">
                 <a href="framework/" class="btn btn-primary">Explore the Framework</a>
                 <a href="perspectives/" class="btn btn-secondary">Read Our Insights</a>
@@ -49,7 +49,7 @@
             <h2>What is Suma Qinti?</h2>
             <p>
                 The SumaQinti TDE (Ethical Digital Transformation) Framework is an exceptional, highly sophisticated paradigm shift. It represents a mature, academically rigorous piece of work that addresses a massive blind spot in global development finance: the intersection of technical infrastructure and systemic social equity.
-                This model elevates DIgital Transformation to a matter of human rights and institutional risk mitigation for Development Finance Institutions (DFIs) .
+                This model elevates Digital Transformation to a matter of human rights and institutional risk mitigation for Development Finance Institutions (DFIs) .
             </p>
             <p>Suma Qinti, meaning "beautiful hummingbird" in Quechua, represents the agile, purposeful approach to ethical digital transformation. We believe technology should serve humanity while respecting our values.</p>
 
@@ -67,7 +67,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">💡</div>
                     <h3>Deep Insights</h3>
-                    <p>Thought leadership on ethical debt, moral programming, and the future of responsible technology.</p>
+                    <p>Thought leadership on ethical technology adoption, digital transformation, and the future of responsible technology for developing economies.</p>
                 </div>
             </div>
         </div>
@@ -101,6 +101,14 @@
             ];
             const randomImage = backgrounds[Math.floor(Math.random() * backgrounds.length)];
             hero.style.backgroundImage = `url(${randomImage})`;
+            const toggleBtn = document.querySelector(".lang-toggle");
+            const langMenu = document.querySelector("#language-menu");
+
+            toggleBtn.addEventListener("click", function () {
+                const expanded = this.getAttribute("aria-expanded") === "true";
+                this.setAttribute("aria-expanded", !expanded);
+                langMenu.classList.toggle("open");
+            });
         });
     </script>
 </body>

@@ -39,9 +39,6 @@
                 <a href="perspectives/" class="btn btn-secondary">阅读洞见</a>
             </div>
         </div>
-        <div class="hero-visual">
-            <div class="hummingbird-icon">🪶</div>
-        </div>
     </header>
 
     <section class="overview">
@@ -85,6 +82,26 @@
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hero = document.querySelector(".hero");
+            const backgrounds = [
+                "images/background/bg1.png",
+                "images/background/bg2.png",
+                "images/background/bg3.png",
+                "images/background/bg4.png"
+            ];
+            const randomImage = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+            hero.style.backgroundImage = `url(${randomImage})`;
+            const toggleBtn = document.querySelector(".lang-toggle");
+            const langMenu = document.querySelector("#language-menu");
+
+            toggleBtn.addEventListener("click", function () {
+                const expanded = this.getAttribute("aria-expanded") === "true";
+                this.setAttribute("aria-expanded", !expanded);
+                langMenu.classList.toggle("open");
+            });
+        });
+    </script>
 </body>
 </html>
