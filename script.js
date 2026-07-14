@@ -6,7 +6,42 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveNavigation();
     setupNewsletterForm();
     setupLanguageSwitcher();
+    contactFormSetup();
 });
+
+function contactFormSetup() {
+    const form = document.getElementById("contactForm");
+    const messageBox = document.getElementById("formMessage");
+
+    if (form && messageBox) {
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault(); // prevent redirect
+            messageBox.className = "form-message"; // reset
+            messageBox.textContent = "Sending...";
+            messageBox.style.display = "block";
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form)
+                });
+
+                if (response.ok) {
+                    messageBox.textContent = "Message sent successfully!";
+                    messageBox.classList.add("success");
+                    form.reset();
+                } else {
+                    messageBox.textContent = "Something went wrong. Please try again.";
+                    messageBox.classList.add("error");
+                }
+            } catch (error) {
+                messageBox.textContent = "Network error. Please try again later.";
+                messageBox.classList.add("error");
+            }
+        });
+    }
+
+}
 
 function updateActiveNavigation() {
     const currentPage = window.location.pathname.split('/').filter(p => p).join('/');
