@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Suma Qinti</a>
+            <img src="../images/SQlogoheader.png" alt="SUMA QINTI">
             <div class="nav-actions">
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">首页</a></li>
@@ -86,10 +86,10 @@
         document.addEventListener("DOMContentLoaded", function () {
             const hero = document.querySelector(".hero");
             const backgrounds = [
-                "images/background/bg1.png",
-                "images/background/bg2.png",
-                "images/background/bg3.png",
-                "images/background/bg4.png"
+                "../images/background/bg1.png",
+                "../images/background/bg2.png",
+                "../images/background/bg3.png",
+                "../images/background/bg4.png"
             ];
             const randomImage = backgrounds[Math.floor(Math.random() * backgrounds.length)];
             hero.style.backgroundImage = `url(${randomImage})`;
